@@ -8,6 +8,7 @@
   </head>
   <body>
     <div id="cal">
+      <div id="cal-heading">Calculator</div>
       <div id="calculate">
       <input type="text" id="result" placeholder="0" />
       <div id="keys">
@@ -39,7 +40,7 @@
       </div>
     </div>
     <script>
-      var manu = document.querySelectorAll("#keys > div");
+      var manu = document.querySelectorAll("#keys >.row > div");
       var cont = document.getElementById("result");
 
       for (var i = 0; i < manu.length; i++) {
