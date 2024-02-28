@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="cal">
+      <div id="cal-heading">Calculator</div>
+      <div id="calculate">
+      <input type="text" id="result" placeholder="0" />
+      <div id="keys">
+        <div class="row">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>+</div>
+        </div>
+        <div class="row">
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>-</div>
+        </div>
+        <div class="row">
+          <div>7</div>
+          <div>8</div>
+          <div>9</div>
+          <div>*</div>
+        </div>
+        <div class="row">
+          <div id="clear">C</div>
+          <div>0</div>
+          <div>=</div>
+          <div>/</div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <script>
+      var manu = document.querySelectorAll("#keys >.row > div");
+      var cont = document.getElementById("result");
+
+      for (var i = 0; i < manu.length; i++) {
+        manu[i].addEventListener("click", mycal);
+      }
+
+      function mycal(event) {
+        var myManu = event.target.innerHTML;
+        if (myManu === "=") {
+          try{
+          cont.value = eval(cont.value);}
+          catch(err){
+            cont.value = 'Error';
+          }
+        }
+        else if (myManu === "C") {
+          cont.value = "";
+        } 
+        else {
+          cont.value += myManu;
+        }
+      }
+    </script>
+  </body>
+</html>
